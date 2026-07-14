@@ -1,0 +1,2457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divesh Tayade | DevOps & Cloud Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#030b06',       // deep green black
+                        cardBg: '#08140d',       // dark green card
+                        neonGreen: '#39ff14',    // neon green
+                        neonRed: '#ff3131',      // neon red
+                        softGreen: '#00ff99',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght=400;500;700&family=Inter:wght=300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-mono {
+            font-family: 'Fira Code', monospace;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-border {
+            background: linear-gradient(135deg, #3b82f6, #10b981, #a855f7);
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body class="bg-[#030b06]" text-slate-100 min-h-screen flex flex-col selection:bg-accentGreen/30
+    selection:text-accentGreen">
+
+    <!-- Top Ribbon & Navbar Container (Matched exactly to Screenshot Layout) -->
+    <nav class="sticky top-0 z-50 bg-[#030712]/95 backdrop-blur-md border-b border-slate-900/40">
+        <!-- Top Operational Status Bar -->
+        <div class="w-full bg-[#020617] border-b border-slate-900/30 py-1.5 text-center">
+            <span class="text-xs font-mono tracking-wide text-slate-400 inline-flex items-center gap-2">
+                <span class="text-[#10b981]">●</span> System Status: 100% Operational (V1.2.0)
+            </span>
+        </div>
+
+        <!-- Main Navbar Content -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <<a href="#" class="font-mono text-2xl font-bold tracking-tight">
+    <span class="text-white">Divesh</span><span class="text-rose-400 tracking-normal">.devops</span>
+</a>
+
+            <!-- Links Area with Bullet Separators & Styled Contact Button -->
+            <div class="hidden md:flex items-center space-x-4 text-sm font-medium text-slate-300"
+    style="animation: navReveal 0.9s ease-out;">
+
+    <style>
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #22d3ee;
+            transform: translateY(-3px);
+            text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
+        }
+
+        .nav-line {
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0%;
+            height: 2px;
+            background: #22d3ee;
+            box-shadow: 0 0 10px #22d3ee;
+            transition: width 0.4s ease;
+        }
+
+        .nav-link:hover .nav-line {
+            width: 100%;
+        }
+
+        @keyframes navReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+                filter: blur(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+    </style>
+
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+    <a href="#about" class="nav-link">
+        About
+        <span class="nav-line"></span>
+    </a>
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+    <a href="#skills" class="nav-link">
+        Skills
+        <span class="nav-line"></span>
+    </a>
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+    <a href="#experience" class="nav-link">
+        Experience
+        <span class="nav-line"></span>
+    </a>
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+    <a href="#projects" class="nav-link">
+        Projects
+        <span class="nav-line"></span>
+    </a>
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+    <a href="#education" class="nav-link">
+        Education
+        <span class="nav-line"></span>
+    </a>
+
+    <span class="text-slate-600 text-xs animate-pulse">•</span>
+
+
+    <a href="#contact"
+        class="relative overflow-hidden px-5 py-2 rounded-lg
+        border border-cyan-500/40
+        bg-cyan-950/30
+        text-cyan-400
+        font-semibold
+        tracking-wide
+        transition-all duration-500
+        hover:-translate-y-1
+        hover:border-cyan-300
+        hover:shadow-[0_0_25px_rgba(34,211,238,0.45)]
+        group">
+
+        <span class="relative z-10">
+            Contact
+        </span>
+
+        <span class="absolute inset-0
+        bg-gradient-to-r from-cyan-400/20 to-blue-500/20
+        translate-y-full
+        group-hover:translate-y-0
+        transition-transform duration-500">
+        </span>
+
+    </a>
+
+</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about"
+        class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-16 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-slate-950">
+        <div class="lg:col-span-7 space-y-6">
+            <div
+                class="inline-flex items-center space-x-2 font-mono bg-slate-900 text-cyan-400 text-xs px-3 py-1 rounded-md border border-slate-800">
+                <span>~$ whoami --role devops</span>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="space-y-4">
+
+    <!-- Animated Name -->
+    <h1
+        class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-[1.15] pb-2 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-500 to-orange-400 animate-gradient">
+        Divesh Tayade
+    </h1>
+
+    <!-- Typing Role Animation -->
+    <div class="h-9 overflow-hidden flex items-center">
+        <p class="typing text-2xl sm:text-3xl text-cyan-400 font-medium font-mono leading-none">
+            •Cloud Engineer •DevOps Engineer •AWS
+        </p>
+    </div>
+
+</div>
+
+            <style>
+                /* Animated Gradient for Name */
+                .animate-gradient {
+                    background-size: 200% auto;
+                    animation: gradientMove 5s linear infinite;
+                }
+
+                @keyframes gradientMove {
+                    0% {
+                        background-position: 0% center;
+                    }
+
+                    100% {
+                        background-position: 200% center;
+                    }
+                }
+
+                /* Typing Animation */
+                .typing {
+                    width: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    border-right: 3px solid #ee6922;
+                    animation:
+                        typing 4s steps(42, end) infinite alternate,
+                        blinkCursor 0.8s step-end infinite;
+                }
+
+                @keyframes typing {
+                    from {
+                        width: 0;
+                    }
+
+                    to {
+                        width: 42ch;
+                    }
+                }
+
+                @keyframes blinkCursor {
+
+                    0%,
+                    100% {
+                        border-color: #22d3ee;
+                    }
+
+                    50% {
+                        border-color: transparent;
+                    }
+                }
+            </style>
+
+            
+            <p class="text-slate-400 max-w-xl text-base leading-relaxed">
+    Transforming ideas into scalable cloud infrastructure through automation, DevOps practices,
+    and cloud-native technologies. Experienced in AWS, Infrastructure as Code, containers,
+    and continuous delivery workflows.
+</p>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#projects"
+                    class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg shadow-cyan-500/10 transition flex items-center gap-2">
+                    <i class="fa-solid fa-rocket text-sm"></i> View Projects
+                </a>
+                <a href="assets/devops-Engineer-Divesh_Tayade.pdf" target="_blank" rel="noopener noreferrer"
+                    class="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-emerald-500/20 transition duration-300 flex items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-down text-sm"></i>
+                    Resume
+                </a>
+                <a href="https://github.com/divesht2024" target="_blank"
+                    class="bg-[#24292F] hover:bg-[#2f363d] text-white px-6 py-3 rounded-xl font-semibold border border-[#30363D] transition-all duration-300 flex items-center gap-2">
+                    <i class="fa-brands fa-github text-lg"></i>
+                    GitHub
+                </a>
+
+
+
+            </div>
+        </div>
+
+        <!-- Terminal Shell Window -->
+        <div
+            class="lg:col-span-5 bg-[#030712] rounded-xl border border-slate-900 shadow-2xl overflow-hidden font-mono text-[14px]">
+            <div class="bg-[#0b1329] px-4 py-2.5 flex items-center justify-between border-b border-slate-950">
+                <div class="flex space-x-2">
+                    <div class="w-3 h-3 bg-[#ff5f56] rounded-full"></div>
+                    <div class="w-3 h-3 bg-[#ffbd2e] rounded-full"></div>
+                    <div class="w-3 h-3 bg-[#27c93f] rounded-full"></div>
+                </div>
+                <div class="text-xs text-slate-300 tracking-wide">divesh@devops-shell:~</div>
+                <div class="w-4"></div>
+            </div>
+
+            <div class="p-4 space-y-4 h-[280px] text-slate-300 overflow-y-auto leading-relaxed" id="terminal-body">
+                <p class="text-[#10b981]">● portfolio.service - Active and Running (uptime: 99.9%)</p>
+
+                <div id="terminal-history" class="space-y-4"></div>
+
+                <div class="flex items-center">
+                    <span class="text-[#10b981] font-bold mr-2 flex-shrink-0">guest@divesh-devops:~$</span>
+                    <input type="text" id="terminal-input"
+                        class="bg-transparent border-none outline-none text-slate-300 w-full focus:ring-0 p-0 font-mono text-[14px]"
+                        placeholder="Type a command ..." autocomplete="off">
+                </div>
+            </div>
+
+            <!-- Custom Pill Action Buttons -->
+            <div class="bg-[#0b1329]/60 p-3 border-t border-slate-950 flex flex-wrap gap-2 text-xs font-sans">
+                <button onclick="runMacro('help')"
+                    class="px-3 py-1.5 bg-[#111827]/80 hover:bg-slate-800 border border-slate-800 rounded-md transition text-slate-300 flex items-center gap-1.5">
+                    <span class="text-slate-400 font-mono">?</span> help
+                </button>
+                <button onclick="runMacro('skills')"
+                    class="px-3 py-1.5 bg-[#111827]/80 hover:bg-slate-800 border border-slate-800 rounded-md transition text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-folder text-slate-400 text-[11px]"></i> skills
+                </button>
+                <button onclick="runMacro('terraform')"
+                    class="px-3 py-1.5 bg-[#111827]/80 hover:bg-slate-800 border border-slate-800 rounded-md transition text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-cube text-slate-400 text-[11px]"></i> terraform
+                </button>
+                <button onclick="runMacro('docker')"
+                    class="px-3 py-1.5 bg-[#111827]/80 hover:bg-slate-800 border border-slate-800 rounded-md transition text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-brands fa-docker text-slate-400 text-[12px]"></i> docker
+                </button>
+                <button onclick="runMacro('clear')"
+                    class="px-3 py-1.5 bg-[#111827]/80 hover:bg-slate-800 border border-slate-800 rounded-md transition text-slate-300 flex items-center gap-1.5">
+                    <i class="fa-solid fa-trash text-slate-400 text-[11px]"></i> clear
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section id="summary" class="bg-slate-950 border-t border-slate-900/60 py-20 overflow-hidden">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+
+                <!-- Profile Image -->
+                <div class="lg:col-span-4 flex justify-center lg:justify-start">
+
+
+                    <div class="relative group w-72 h-72">
+
+
+                        <!-- Neon Glow -->
+                        <div class="absolute inset-0 rounded-3xl
+                        bg-gradient-to-r from-red-500 via-cyan-400 to-purple-500
+                        blur-xl opacity-60
+                        group-hover:opacity-100
+                        transition duration-700
+                        animate-pulse">
+                        </div>
+
+
+
+                        <div class="relative w-full h-full
+                        p-[3px]
+                        rounded-3xl
+                        bg-gradient-to-r from-red-500 via-cyan-400 to-purple-500">
+
+
+                            <img src="assets/my-pic.png" alt="Profile Image" class="w-full h-full object-cover rounded-3xl
+                            bg-slate-900
+                            border-4 border-slate-950">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- Content -->
+                <div class="lg:col-span-8 space-y-7">
+
+
+                    <!-- Title -->
+                    <div class="space-y-3 text-center lg:text-left">
+
+
+                        <h2 class="text-4xl font-extrabold tracking-tight text-white">
+
+                            Professional Summary
+
+                        </h2>
+
+
+
+                        <div class="h-1 w-28
+                        bg-gradient-to-r
+                        from-red-500 via-cyan-400 to-purple-500
+                        rounded-full
+                        mx-auto lg:mx-0">
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+
+                    <!-- Description -->
+                    <div class="text-slate-300 text-base leading-relaxed
+                    space-y-5 text-center lg:text-left">
+
+
+                        <p>
+
+                            I am an
+                            <span class="text-red-400 font-bold">
+                                Cloud/DevOps Engineer
+                            </span>
+                            with 7 months of
+                            hands-on experience in AWS, Terraform, Docker,
+                            GitHub Actions CI/CD, and Linux.
+
+                        </p>
+
+
+
+                        <p>
+
+                            
+                            I specialize in automating cloud infrastructure, building deployment pipelines, managing AWS
+                            environments, and deploying fault-tolerant architectures using Infrastructure as Code and
+                            container technologies.
+
+
+                        </p>
+
+
+
+                        <p>
+
+                            Passionate about infrastructure automation, cloud
+                            cost optimization, and building systems that are
+                            secure, scalable, and self-healing.
+
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Skill Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-5">
+
+
+
+
+
+                        <!-- Linux -->
+                        <div class="group p-5
+                        bg-slate-900/50
+                        backdrop-blur-xl
+                        border border-red-500/20
+                        rounded-xl
+                        text-center
+                        transition-all duration-500
+                        hover:-translate-y-2
+                        hover:border-red-500
+                        hover:shadow-[0_0_30px_rgba(239,68,68,0.35)]">
+
+
+                            <i class="fa-brands fa-linux
+                            text-3xl text-red-400">
+                            </i>
+
+
+                            <h4 class="mt-3 font-bold text-white">
+                                Linux 
+                            </h4>
+
+
+                            <p class="text-xs text-slate-400 mt-2">
+                                RHEL, System Administration
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <!-- CI/CD -->
+                        <div class="group p-5
+                        bg-slate-900/50
+                        backdrop-blur-xl
+                        border border-cyan-500/20
+                        rounded-xl
+                        text-center
+                        transition-all duration-500
+                        hover:-translate-y-2
+                        hover:border-cyan-400
+                        hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]">
+
+
+
+                            <i class="fa-solid fa-code-branch
+                            text-3xl text-cyan-400">
+                            </i>
+
+
+
+                            <h4 class="mt-3 font-bold text-white">
+                                CI/CD Automation
+                            </h4>
+
+
+
+                            <p class="text-xs text-slate-400 mt-2">
+                                GitHub Actions, Jenkins, Pipelines
+                            </p>
+
+
+                        </div>
+
+
+
+
+
+
+
+
+                        <!-- Cloud -->
+                        <div class="group p-5
+                        bg-slate-900/50
+                        backdrop-blur-xl
+                        border border-purple-500/20
+                        rounded-xl
+                        text-center
+                        transition-all duration-500
+                        hover:-translate-y-2
+                        hover:border-purple-500
+                        hover:shadow-[0_0_30px_rgba(168,85,247,0.35)]">
+
+
+
+                            <i class="fa-brands fa-aws
+                            text-3xl text-amber-500">
+                            </i>
+
+
+
+                            <h4 class="mt-3 font-bold text-white">
+                                Cloud Native
+                            </h4>
+
+
+
+                            <p class="text-xs text-slate-400 mt-2">
+                                AWS, Docker, Terraform
+                            </p>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <!-- Key Skills Matrix -->
+    <section id="skills"
+        class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 space-y-10 bg-slate-950 border-t border-slate-900/60">
+        <div class="text-center space-y-2">
+            <h2 class="text-4xl font-extrabold tracking-tight text-white">Key Skills & Tools</h2>
+            <div class="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 rounded mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-brands fa-aws text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Cloud Platforms</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+
+                    <!-- AWS Skills -->
+
+
+
+
+
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> AWS EC2,
+                        VPC, S3</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> IAM, EBS,
+                        RDS</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Route 53,
+                        ALB, ELB</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> ASG,
+                        Multi-AZ</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> SNS, SQS,
+                        Lambda</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> API
+                        Gateway, ECR, ECS</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> CloudTrail,
+                        CloudWatch</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> GuardDuty,
+                        Inspector, AWS Config</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> AWS
+                        Detective, Macie, WAF, Shield</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> KMS
+                        Encryption & Secrets Manager</li>
+
+
+                </ul>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-solid fa-layer-group text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Infrastructure as a Code</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Terraform
+                        Modules</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Variables
+                        Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Outputs
+                        Configuration</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Remote S3
+                        Backend</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> DynamoDB
+                        State Locking</li>
+                </ul>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+                    <i class="fa-solid fa-cubes text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Containers & Orchestration</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Dockerfile
+                        & Image Creation</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Multi-stage
+                        Builds & Image Optimization</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Docker
+                        Compose & Multi-Container Applications</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Docker
+                        Networking & Service Communication</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Volumes &
+                        Persistent Storage Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Layer
+                        Caching & Build Optimization</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Container
+                        Lifecycle Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> GitHub
+                        Actions CI/CD Integration</li>
+                </ul>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-solid fa-infinity text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">DevOps & CI/CD</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> CI/CD
+                        Pipeline Design & Automation</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> GitHub
+                        Actions Workflows</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Jenkins
+                        Pipeline Development</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Git &
+                        Version Control Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> GitHub
+                        Repository Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Build &
+                        Deployment Automation</li>
+                </ul>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-brands fa-linux text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Linux</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Linux
+                        Administration & Package Management</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> File
+                        Permissions & User Management</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Process
+                        Monitoring & Service Management</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Log
+                        Analysis & System Monitoring</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Cron Jobs
+                        Scheduling & Automation</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> SSH &
+                        Remote Administration</li>
+                </ul>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+                    <i class="fa-solid fa-network-wired text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Networking</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> VPC Design,
+                        Peering & Transit Gateway</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span>
+                        Public/Private Subnets & Route Tables</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> IGW, NAT
+                        Gateway & DNS Resolution</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Security
+                        Groups & Network ACLs</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> TCP/IP,
+                        HTTP/HTTPS & TLS/SSL</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Subnetting,
+                        OSI Model & Load Balancing</li>
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> CDN with
+                        Amazon CloudFront</li>
+                </ul>
+            </div>
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+                    <i class="fa-solid fa-gauge-high text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Monitoring & Tools</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Prometheus
+                        & Grafana Monitoring</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> AWS
+                        CloudWatch Logs & Metrics</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Log
+                        Management & Analysis</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Jira
+                        Project Management</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Nginx &
+                        Apache Web Servers</li>
+                </ul>
+            </div>
+
+
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-solid fa-code text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">Scripting</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Bash Shell
+                        Scripting</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Python
+                        Boto3</li>
+
+
+                </ul>
+            </div>
+
+
+
+
+
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-solid fa-user-shield text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">DevSecOps</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> SonarQube
+                        Code Quality Analysis</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Trivy
+                        Container Vulnerability Scanning</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> OWASP Top
+                        10 Security Testing</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> SAST & DAST
+                        Security Practices</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Dependency
+                        & Image Vulnerability Scanning</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Secrets
+                        Detection & Secure CI/CD Pipelines</li>
+
+
+                </ul>
+            </div>
+
+
+
+            <div class="bg-slate-900/30 border border-slate-900 p-6 rounded-xl space-y-4
+            transition-all duration-300 ease-in-out
+            hover:-translate-y-2 hover:scale-[1.02]
+            hover:border-green-400
+            hover:bg-green-400/10
+            hover:shadow-xl hover:shadow-green-400/20">
+                <div class="flex items-center gap-3 border-b border-slate-900 pb-3">
+
+                    <i class="fa-solid fa-robot text-xl text-cyan-400"></i>
+                    <h3 class="font-bold text-base text-white">QA & Automation Testing</h3>
+                </div>
+                <ul class="text-sm text-slate-400 space-y-2.5">
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Selenium
+                        WebDriver, TestNG Automation</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Page Object
+                        Model (POM) Framework</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> API
+                        Testing: Postman, REST Assured</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> REST API
+                        Validation & JSON Testing</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Database
+                        Testing: SQL, MySQL, MongoDB</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Regression,
+                        Functional & Integration Testing</li>
+
+                    <li class="flex items-start"><span class="text-cyan-400 font-mono text-xs mr-2">▶</span> Jira &
+                        Defect Life Cycle Management</li>
+
+
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="bg-[#030b06] border-t border-green-900/30 py-20">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Heading -->
+            <div class="text-center mb-14">
+                <h2 class="text-4xl font-extrabold tracking-tight text-white">
+                    Professional Experience
+                </h2>
+
+                <div
+                    class="h-1 w-28 bg-gradient-to-r from-green-400 via-green-500 to-red-500 rounded-full mx-auto mt-4">
+                </div>
+            </div>
+
+            <!-- Center Container -->
+            <div class="flex justify-center">
+
+                <!-- Experience Card -->
+                <div class="group relative w-full max-w-5xl
+                bg-[#08140d]/80 backdrop-blur-lg
+                border border-green-500/20
+                rounded-3xl p-8 overflow-hidden
+                transition-all duration-500 ease-in-out
+                hover:-translate-y-3
+                hover:border-green-400/50
+                hover:shadow-[0_0_60px_rgba(57,255,20,0.15)]">
+
+                    <!-- Background Glow -->
+                    <div class="absolute -right-10 -top-10 w-44 h-44
+                    bg-green-500/10 rounded-full blur-3xl
+                    group-hover:bg-red-500/10
+                    transition duration-700">
+                    </div>
+
+                    <!-- Shimmer Animation -->
+                    <div class="absolute inset-0 overflow-hidden rounded-3xl">
+                        <div class="absolute top-0 left-[-120%] w-full h-full
+                        bg-gradient-to-r
+                        from-transparent
+                        via-white/5
+                        to-transparent
+                        group-hover:left-[120%]
+                        transition-all duration-1000">
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col lg:flex-row gap-8 items-start">
+
+                        <!-- Linux Icon -->
+                        <div class="flex-shrink-0
+                        bg-gradient-to-br from-green-500/10 to-red-500/10
+                        border border-green-500/20
+                        p-5 rounded-2xl
+                        group-hover:rotate-6
+                        transition duration-500">
+
+                            <i class="fa-brands fa-linux text-5xl text-green-400"></i>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="flex-1 space-y-5">
+
+                            <!-- Header -->
+                            <div class="border-b border-green-900/30 pb-5">
+
+                                <span class="inline-flex items-center gap-2
+                                text-[11px]
+                                uppercase
+                                tracking-[3px]
+                                font-bold
+                                text-green-400">
+
+                                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+
+                                    Current Role
+                                </span>
+
+                                <h3 class="text-2xl font-bold text-white mt-3">
+                                    Associate Technical Support Engineer
+                                </h3>
+
+                                <p class="text-green-400 font-mono mt-2">
+                                    Persistent Systems • Pune
+                                </p>
+
+                                <div class="mt-4">
+                                    <span class="inline-block
+                                    px-4 py-2
+                                    rounded-full
+                                    text-xs
+                                    font-mono
+                                    bg-green-500/10
+                                    border border-green-500/30
+                                    text-green-300">
+
+                                        Apr 2025 – Present
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Responsibilities -->
+                            <ul class="space-y-4 text-slate-300 leading-8">
+
+                                <li class="flex gap-4">
+                                    <span class="text-green-400 text-xl">⚡</span>
+                                    Supported Linux-based production servers and resolved issues related to user access,
+                                    system performance and network connectivity.
+                                </li>
+
+                                <li class="flex gap-4">
+                                    <span class="text-green-400 text-xl">⚡</span>
+                                    Performed Linux administration including user management, permissions, process
+                                    monitoring and log analysis.
+                                </li>
+
+                                <li class="flex gap-4">
+                                    <span class="text-green-400 text-xl">⚡</span>
+                                    Managed multiple Linux servers securely through SSH for operational support and
+                                    maintenance activities.
+                                </li>
+
+                                <li class="flex gap-4">
+                                    <span class="text-red-400 text-xl">🔥</span>
+                                    Completed hands-on training in AWS, Docker, Kubernetes, Jenkins and Infrastructure
+                                    Automation workflows.
+                                </li>
+
+                            </ul>
+
+                            <!-- Tech Stack -->
+                            <div class="pt-6 border-t border-green-900/30 flex flex-wrap gap-3">
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-green-500/30 bg-green-500/10 text-green-300">
+                                    Linux
+                                </span>
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-green-500/30 bg-green-500/10 text-green-300">
+                                    SSH
+                                </span>
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-green-500/30 bg-green-500/10 text-green-300">
+                                    AWS
+                                </span>
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-green-500/30 bg-green-500/10 text-green-300">
+                                    Docker
+                                </span>
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-green-500/30 bg-green-500/10 text-green-300">
+                                    Kubernetes
+                                </span>
+
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs border border-red-500/30 bg-red-500/10 text-red-300">
+                                    DevOps
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="projects" class="bg-slate-950 border-t border-slate-900/60 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            <div class="text-center space-y-2">
+                <h2 class="text-4xl font-extrabold tracking-tight text-white">Featured Projects</h2>
+                <div class="h-1 w-24 bg-gradient-to-r from-cyan-400 to-purple-500 rounded mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Project 1 -->
+                <!-- Project 1 -->
+                <div class="group relative h-full bg-[#111827]/50 backdrop-blur-lg
+    border border-cyan-500/20 rounded-2xl p-6
+    flex flex-col justify-between overflow-hidden
+    transition-all duration-500 ease-out
+    hover:-translate-y-4 hover:scale-[1.02]
+    hover:border-cyan-400
+    hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
+
+                    <!-- Glow Orb -->
+                    <div class="absolute -right-10 -top-10 w-40 h-40
+        bg-cyan-500/10 rounded-full blur-3xl
+        group-hover:bg-violet-500/15
+        transition-all duration-700">
+                    </div>
+
+                    <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl">
+                        <div class="absolute top-0 left-[-120%] w-1/2 h-full
+            bg-gradient-to-r from-transparent via-white/10 to-transparent
+            skew-x-12 group-hover:left-[150%]
+            transition-all duration-1000">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="relative space-y-4 flex-1">
+
+                        <div class="flex items-start gap-4">
+
+                            <!-- Icon -->
+                            <div class="flex-shrink-0 bg-[#1f2937]/60 p-4 rounded-xl
+                border border-cyan-500/20 transition duration-500
+                group-hover:rotate-12
+                group-hover:scale-110
+                group-hover:bg-cyan-500/10">
+
+                                <i class="fa-solid fa-cubes text-2xl text-cyan-400"></i>
+                            </div>
+
+                            <!-- Header -->
+                            <div class="space-y-1">
+                                <span class="block text-[11px] font-bold tracking-[2px]
+                    text-purple-400 uppercase">
+                                    Infrastructure as Code
+                                </span>
+
+                                <h3 class="text-lg font-bold text-white leading-snug
+                    transition duration-300 group-hover:text-cyan-300">
+                                    AWS Infrastructure Automation using Terraform
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <!-- Description -->
+                        <ul class="mt-4 space-y-4 text-slate-400 text-sm leading-7">
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Automated provisioning of
+                                    <span class="text-white font-medium">
+                                        10+ AWS resources
+                                    </span>
+                                    including VPC, EC2, IAM Roles and Security Groups using Terraform,
+                                    reducing manual setup time by approximately
+                                    <span class="text-cyan-400 font-semibold">
+                                        60%
+                                    </span>.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Built
+                                    <span class="text-white font-medium">
+                                        4+ reusable Terraform modules
+                                    </span>
+                                    with variables and outputs enabling consistent deployments
+                                    across development and production environments.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Configured an
+                                    <span class="text-white font-medium">
+                                        S3 remote backend
+                                    </span>
+                                    with
+                                    <span class="text-white font-medium">
+                                        DynamoDB state locking
+                                    </span>
+                                    to prevent concurrent state conflicts.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-red-400">🔥</span>
+                                <span>
+                                    Integrated a
+                                    <span class="text-white font-medium">
+                                        GitHub Actions CI/CD pipeline
+                                    </span>
+                                    for automated formatting, validation and deployment on
+                                    push to the
+                                    <span class="text-cyan-400">
+                                        main
+                                    </span>
+                                    branch.
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Technologies -->
+                    <div
+                        class="relative mt-6 pt-5 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-mono">
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-violet-500/15 text-violet-300 border border-violet-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-violet-500/20">
+                            Terraform
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-500/15 text-green-300 border border-green-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20">
+                            CI/CD
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20">
+                            DynamoDB
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-300 border border-orange-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
+                            GitHub Actions
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20">
+                            VPC
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-red-500/15 text-red-300 border border-red-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/20">
+                            IAM
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20">
+                            EC2
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-yellow-500/15 text-yellow-300 border border-yellow-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-yellow-500/20">
+                            S3
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Project 2 -->
+                <div class="group relative h-full bg-[#111827]/50 backdrop-blur-lg
+    border border-cyan-500/20 rounded-2xl p-6 flex flex-col justify-between
+    overflow-hidden transition-all duration-500 ease-out
+    hover:-translate-y-4 hover:scale-[1.02]
+    hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
+
+                    <!-- Glow Orb -->
+                    <div class="absolute -right-10 -top-10 w-40 h-40
+        bg-cyan-500/10 rounded-full blur-3xl
+        group-hover:bg-purple-500/15
+        transition-all duration-700">
+                    </div>
+
+                    <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl">
+                        <div class="absolute top-0 left-[-120%] w-1/2 h-full
+            bg-gradient-to-r from-transparent via-white/10 to-transparent
+            skew-x-12 group-hover:left-[150%]
+            transition-all duration-1000">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="relative space-y-4 flex-1">
+
+                        <div class="flex items-start gap-4">
+
+                            <!-- Icon -->
+                            <div class="flex-shrink-0 bg-[#1f2937]/60 p-4 rounded-xl
+                border border-cyan-500/20 transition duration-500
+                group-hover:rotate-12 group-hover:scale-110
+                group-hover:bg-cyan-500/10">
+
+                                <i class="fa-solid fa-layer-group text-2xl text-cyan-400"></i>
+                            </div>
+
+                            <!-- Header -->
+                            <div class="space-y-1">
+                                <span class="block text-[11px] font-bold tracking-[2px]
+                    text-purple-400 uppercase">
+                                    Deployment
+                                </span>
+
+                                <h3 class="text-lg font-bold text-white leading-snug
+                    transition duration-300 group-hover:text-cyan-300">
+                                    Production-Grade 3-Tier Architecture on AWS
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <!-- Description -->
+                        <ul class="mt-4 space-y-4 text-slate-400 text-sm leading-7">
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Architected a
+                                    <span class="text-white font-medium">
+                                        production-grade 3-tier AWS infrastructure
+                                    </span>
+                                    across
+                                    <span class="text-cyan-400">
+                                        2 Availability Zones
+                                    </span>
+                                    with isolated public and private subnets.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Configured an
+                                    <span class="text-white font-medium">
+                                        Application Load Balancer (ALB)
+                                    </span>
+                                    with
+                                    <span class="text-white font-medium">
+                                        Auto Scaling Groups (ASG)
+                                    </span>
+                                    enabling automatic scaling from
+                                    <span class="text-cyan-400">
+                                        2 to 4 EC2 instances.
+                                    </span>
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Deployed
+                                    <span class="text-white font-medium">
+                                        Amazon RDS MySQL
+                                    </span>
+                                    with
+                                    <span class="text-cyan-400">
+                                        Multi-AZ failover
+                                    </span>
+                                    and configured CloudWatch alarms with SNS notifications.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-red-400">🔥</span>
+                                <span>
+                                    Deployed a
+                                    <span class="text-white font-medium">
+                                        full-stack web application
+                                    </span>
+                                    validating secure end-to-end connectivity.
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Technologies -->
+                    <div
+                        class="relative mt-6 pt-5 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-mono">
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20">
+                            AWS EC2
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20">
+                            AWS VPC
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20">
+                            AWS ALB
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-500/15 text-green-300 border border-green-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20">
+                            Auto Scaling Group
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-300 border border-orange-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
+                            Amazon RDS
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/20">
+                            CloudWatch
+                        </span>
+
+                    </div>
+
+                </div>
+                <!-- Project 3 -->
+
+                <div class="group relative h-full bg-[#111827]/50 backdrop-blur-lg
+    border border-cyan-500/20 rounded-2xl p-6
+    flex flex-col justify-between overflow-hidden
+    transition-all duration-500 ease-out
+    hover:-translate-y-4 hover:scale-[1.02]
+    hover:border-cyan-400
+    hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
+
+                    <!-- Glow Orb -->
+                    <div class="absolute -right-10 -top-10 w-40 h-40
+        bg-cyan-500/10 rounded-full blur-3xl
+        group-hover:bg-purple-500/15
+        transition-all duration-700">
+                    </div>
+
+                    <!-- Shimmer Effect -->
+                    <div class="absolute inset-0 overflow-hidden rounded-2xl">
+                        <div class="absolute top-0 left-[-120%] w-1/2 h-full
+            bg-gradient-to-r from-transparent via-white/10 to-transparent
+            skew-x-12 group-hover:left-[150%]
+            transition-all duration-1000">
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="relative space-y-4 flex-1">
+
+                        <div class="flex items-start gap-4">
+
+                            <!-- Icon -->
+                            <div class="flex-shrink-0 bg-[#1f2937]/60 p-4 rounded-xl
+                border border-cyan-500/20 transition duration-500
+                group-hover:rotate-12
+                group-hover:scale-110
+                group-hover:bg-cyan-500/10">
+
+                                <i class="fa-solid fa-robot text-2xl text-cyan-400"></i>
+                            </div>
+
+                            <!-- Header -->
+                            <div class="space-y-1">
+                                <span class="block text-[11px] font-bold tracking-[2px]
+                    text-purple-400 uppercase">
+                                    Cron Job
+                                </span>
+
+                                <h3 class="text-lg font-bold text-white leading-snug
+                    transition duration-300 group-hover:text-cyan-300">
+                                    Cost Optimization Toolkit
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <!-- Description -->
+                        <ul class="mt-4 space-y-4 text-slate-400 text-sm leading-7">
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Developed a modular
+                                    <span class="text-white font-medium">
+                                        Python automation tool
+                                    </span>
+                                    using the
+                                    <span class="text-cyan-400">
+                                        Boto3 SDK
+                                    </span>
+                                    to discover and terminate unattached AWS resources.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Built serverless automation using
+                                    <span class="text-white font-medium">
+                                        AWS Lambda
+                                    </span>
+                                    and
+                                    <span class="text-cyan-400">
+                                        Python (Boto3)
+                                    </span>
+                                    to detect stale resources using
+                                    <span class="text-white font-medium">
+                                        EventBridge
+                                    </span>
+                                    scheduled triggers.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-cyan-400">⚡</span>
+                                <span>
+                                    Automated
+                                    <span class="text-white font-medium">
+                                        EC2 startup and shutdown
+                                    </span>
+                                    using Lambda and cron expressions, reducing compute costs.
+                                </span>
+                            </li>
+
+                            <li class="flex gap-3">
+                                <span class="text-red-400">🔥</span>
+                                <span>
+                                    Configured
+                                    <span class="text-white font-medium">
+                                        Amazon SNS
+                                    </span>
+                                    notifications for real-time cost alerts and proactive cleanup.
+                                </span>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <!-- Technologies -->
+                    <div
+                        class="relative mt-6 pt-5 border-t border-slate-800 flex flex-wrap gap-2 text-[11px] font-mono">
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/20">
+                            Python
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-500/15 text-green-300 border border-green-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-green-500/20">
+                            Boto3
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-orange-500/15 text-orange-300 border border-orange-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-orange-500/20">
+                            AWS Lambda
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20">
+                            EventBridge
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-pink-500/20">
+                            Amazon SNS
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/20">
+                            EC2
+                        </span>
+
+                        <span
+                            class="px-3 py-1 rounded-full bg-red-500/15 text-red-300 border border-red-500/40 transition duration-300 hover:scale-110 hover:shadow-lg hover:shadow-red-500/20">
+                            IAM
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Education Timeline Section -->
+    <section id="education" class="border-t border-slate-900/60 py-20 bg-slate-950 overflow-hidden">
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+
+
+            <!-- Heading -->
+            <div class="flex flex-col items-center text-center space-y-3">
+
+                <h2 class="text-4xl font-extrabold tracking-tight text-white">
+                    Education
+                </h2>
+
+                <div
+                    class="h-1 w-28 bg-gradient-to-r from-red-500 via-pink-500 to-purple-500 rounded-full animate-pulse">
+                </div>
+
+            </div>
+
+
+
+            <!-- Timeline -->
+            <div class="relative border-l border-red-500/30 ml-4 md:ml-6 pl-8 space-y-8">
+
+
+
+                <!-- B.Tech -->
+                <div class="relative group animate-fade-up">
+
+
+                    <div class="absolute -left-[37px] top-6 w-3 h-3 bg-red-500 rounded-full
+                    shadow-[0_0_20px_5px_rgba(239,68,68,0.8)]
+                    animate-pulse">
+                    </div>
+
+
+                    <div class="relative bg-slate-900/50 backdrop-blur-xl
+                    border border-red-500/20 rounded-xl p-6
+                    transition-all duration-500
+                    hover:-translate-y-3
+                    hover:border-red-500
+                    hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]
+                    overflow-hidden">
+
+
+                        <div class="absolute inset-0 bg-gradient-to-r from-red-500/10 via-transparent to-pink-500/10
+                        opacity-0 group-hover:opacity-100 transition duration-700">
+                        </div>
+
+
+                        <div class="relative flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+
+
+                            <div class="space-y-2">
+
+
+                                <h3 class="text-lg font-bold text-white tracking-wide">
+                                    Bachelor of Technology (B.Tech)
+                                </h3>
+
+
+                                <p class="text-sm text-slate-300 font-medium">
+                                    Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded
+                                </p>
+
+
+                                <p class="text-sm text-red-400 font-semibold">
+                                    CGPA: 7.99/10
+                                </p>
+
+
+                            </div>
+
+
+
+                            <span class="text-xs font-mono
+                            border border-red-500/40
+                            bg-red-500/10
+                            text-red-400
+                            px-3 py-1 rounded-full
+                            shadow-[0_0_15px_rgba(239,68,68,0.4)]">
+                                2025
+                            </span>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- 12th -->
+                <div class="relative group animate-fade-up">
+
+
+                    <div class="absolute -left-[37px] top-6 w-3 h-3 bg-red-500 rounded-full
+                    shadow-[0_0_20px_rgba(239,68,68,0.8)]">
+                    </div>
+
+
+
+                    <div class="bg-slate-900/50 backdrop-blur-xl
+                    border border-red-500/20 rounded-xl p-6
+                    transition-all duration-500
+                    hover:-translate-y-3
+                    hover:border-red-500
+                    hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]">
+
+
+                        <div class="flex flex-col sm:flex-row justify-between gap-4">
+
+
+
+                            <div class="space-y-2">
+
+
+                                <h3 class="text-lg font-bold text-white tracking-wide">
+                                    Higher Secondary Certificate (12th Grade)
+                                </h3>
+
+
+                                <p class="text-sm text-slate-300 font-medium">
+                                    J.B Science
+                                </p>
+
+
+                                <p class="text-sm text-red-400 font-semibold">
+                                    Percentage: 94.17%
+                                </p>
+
+
+                            </div>
+
+
+
+
+                            <span class="text-xs font-mono
+                            border border-red-500/40
+                            bg-red-500/10
+                            text-red-400
+                            px-3 py-1 rounded-full">
+                                2021
+                            </span>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- 10th -->
+                <div class="relative group animate-fade-up">
+
+
+                    <div class="absolute -left-[37px] top-6 w-3 h-3 bg-red-500 rounded-full
+                    shadow-[0_0_20px_rgba(239,68,68,0.8)]">
+                    </div>
+
+
+
+
+                    <div class="bg-slate-900/50 backdrop-blur-xl
+                    border border-red-500/20 rounded-xl p-6
+                    transition-all duration-500
+                    hover:-translate-y-3
+                    hover:border-red-500
+                    hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]">
+
+
+
+                        <div class="flex flex-col sm:flex-row justify-between gap-4">
+
+
+                            <div class="space-y-2">
+
+
+                                <h3 class="text-lg font-bold text-white tracking-wide">
+                                    Secondary School Certificate (10th Grade)
+                                </h3>
+
+
+                                <p class="text-sm text-slate-300 font-medium">
+                                    Agragami High School Wardha
+                                </p>
+
+
+                                <p class="text-sm text-red-400 font-semibold">
+                                    Percentage: 90.80%
+                                </p>
+
+
+                            </div>
+
+
+
+
+                            <span class="text-xs font-mono
+                            border border-red-500/40
+                            bg-red-500/10
+                            text-red-400
+                            px-3 py-1 rounded-full">
+                                2019
+                            </span>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <style>
+        @keyframes fade-up {
+
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .animate-fade-up {
+
+            animation: fade-up 0.8s ease forwards;
+
+        }
+    </style>
+    <!-- Featured Projects -->
+    
+
+    
+    <!-- Industry Certifications -->
+    <section id="certifications"
+        class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-20 space-y-10 bg-slate-950 border-t border-slate-900/60 overflow-hidden">
+
+
+        <!-- Heading -->
+        <div class="flex flex-col items-center text-center space-y-3">
+
+            <h2 class="text-4xl font-extrabold tracking-tight text-white">
+                Certifications
+            </h2>
+
+
+            <div class="h-1 w-28 bg-gradient-to-r from-red-500 via-cyan-400 to-purple-500 rounded-full animate-pulse">
+            </div>
+
+            <p class="text-sm text-slate-400 max-w-md">
+                Professional certifications focused on Cloud, AWS, and modern infrastructure technologies.
+            </p>
+
+        </div>
+
+
+
+
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+
+            <!-- AWS AI Practitioner -->
+            <div class="group relative bg-slate-900/50 backdrop-blur-xl
+            border border-red-500/20 rounded-2xl p-6
+            transition-all duration-500
+            hover:-translate-y-3
+            hover:border-red-500
+            hover:shadow-[0_0_40px_rgba(239,68,68,0.35)]
+            overflow-hidden">
+
+
+                <!-- Glow -->
+                <div class="absolute -right-10 -top-10 w-32 h-32
+                bg-red-500/20 rounded-full blur-3xl
+                group-hover:bg-red-500/40 transition">
+                </div>
+
+
+
+                <div class="relative flex items-start gap-5">
+
+
+                    <div class="flex-shrink-0
+                    bg-slate-800/80
+                    p-4 rounded-xl
+                    border border-orange-500/30
+                    shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+
+                        <i class="fa-brands fa-aws text-3xl text-amber-500"></i>
+
+                    </div>
+
+
+
+                    <div class="space-y-2">
+
+
+                        <span class="inline-block text-[11px]
+                        font-bold tracking-widest
+                        text-red-400 uppercase">
+                            Foundational Level
+                        </span>
+
+
+
+                        <h3 class="text-lg font-bold text-white">
+                            AWS Certified AI Practitioner
+                        </h3>
+
+
+
+                        <p class="text-xs text-cyan-400 font-mono">
+                            AIF-C01
+                        </p>
+
+
+
+                        <span class="inline-flex mt-2
+                        text-[10px]
+                        px-3 py-1
+                        rounded-full
+                        bg-red-500/10
+                        border border-red-500/30
+                        text-red-400">
+                            AWS Certified
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- AWS Cloud Practitioner -->
+            <div class="group relative bg-slate-900/50 backdrop-blur-xl
+            border border-cyan-500/20 rounded-2xl p-6
+            transition-all duration-500
+            hover:-translate-y-3
+            hover:border-cyan-400
+            hover:shadow-[0_0_40px_rgba(34,211,238,0.35)]
+            overflow-hidden">
+
+
+                <div class="absolute -right-10 -top-10 w-32 h-32
+                bg-cyan-500/20 rounded-full blur-3xl
+                group-hover:bg-cyan-500/40 transition">
+                </div>
+
+
+
+                <div class="relative flex items-start gap-5">
+
+
+                    <div class="flex-shrink-0
+                    bg-slate-800/80
+                    p-4 rounded-xl
+                    border border-orange-500/30
+                    shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+
+
+                        <i class="fa-brands fa-aws text-3xl text-amber-500"></i>
+
+
+                    </div>
+
+
+
+
+                    <div class="space-y-2">
+
+
+                        <span class="inline-block text-[11px]
+                        font-bold tracking-widest
+                        text-cyan-400 uppercase">
+                            Foundational Level
+                        </span>
+
+
+
+                        <h3 class="text-lg font-bold text-white">
+                            AWS Certified Cloud Practitioner
+                        </h3>
+
+
+
+                        <p class="text-xs text-cyan-400 font-mono">
+                            CLF-C02
+                        </p>
+
+
+
+                        <span class="inline-flex mt-2
+                        text-[10px]
+                        px-3 py-1
+                        rounded-full
+                        bg-cyan-500/10
+                        border border-cyan-500/30
+                        text-cyan-400">
+
+                            AWS Certified
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <!-- Upcoming Certification -->
+            <div class="group relative bg-slate-900/30 backdrop-blur-xl
+            border border-purple-500/20 rounded-2xl p-6
+            transition-all duration-500
+            hover:-translate-y-3
+            hover:border-purple-500
+            hover:shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+
+
+                <div class="flex items-start gap-5">
+
+
+                    <div class="flex-shrink-0
+                    bg-slate-800/80
+                    p-4 rounded-xl
+                    border border-purple-500/30">
+
+
+                        <i class="fa-solid fa-cloud text-3xl text-purple-400"></i>
+
+
+                    </div>
+
+
+
+                    <div class="space-y-2">
+
+
+                        <span class="text-[11px]
+                        font-bold tracking-widest
+                        text-purple-400 uppercase">
+                            Learning
+                        </span>
+
+
+
+                        <h3 class="text-lg font-bold text-white">
+                            AWS Solutions Architect
+                        </h3>
+
+
+                        <p class="text-xs text-slate-400 font-mono">
+                            In Progress
+                        </p>
+
+
+
+                        <span class="inline-flex mt-2
+                        text-[10px]
+                        px-3 py-1
+                        rounded-full
+                        bg-purple-500/10
+                        border border-purple-500/30
+                        text-purple-400">
+
+                            Preparing
+
+                        </span>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </section>
+
+    <!-- Get In Touch Contact Section -->
+    <!-- ================= Contact Section ================= -->
+    <section id="contact" class="bg-slate-950 py-16 border-t border-slate-900"></section>
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold tracking-tight text-white">Get In Touch</h2>
+
+            <div class="w-28 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mx-auto mt-5"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-14 items-start">
+
+            <!-- Left Side -->
+            <div>
+
+                <h3 class="text-4xl font-bold text-white mb-8">
+                    Connect With Me !!!
+                </h3>
+
+                <p class="text-slate-400 text-lg leading-9 max-w-xl">
+                    I am actively seeking opportunities to implement
+                    infrastructure automation, cloud-native pipelines,
+                    and reliable platform operations. Reach out for
+                    collaboration or inquiries!
+                </p>
+
+                <!-- Contact Items -->
+                <div class="mt-14 space-y-10">
+
+                    <!-- Email -->
+                    <div class="flex items-center gap-3">
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center">
+                            <i class="fas fa-envelope text-cyan-400 text-base"></i>
+                        </div>
+
+                        <div>
+                            <p class="uppercase text-[10px] tracking-widest text-slate-500">
+                                Email Me
+                            </p>
+
+                            <a href="mailto:diveshtayade20@gmail.com"
+                                class="text-base font-semibold text-white hover:text-cyan-400 transition">
+                                diveshtayade20@gmail.com
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center">
+
+                            <i class="fas fa-phone text-cyan-400 text-lg"></i>
+
+                        </div>
+
+                        <div>
+                            <p class="uppercase tracking-[2px] text-[10px] text-slate-500">
+                                Call Me
+                            </p>
+
+                            <p class="text-lg font-semibold text-white">
+                                +91 7840979647
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- LinkedIn -->
+                    <div class="flex items-center gap-4">
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center">
+                            <i class="fab fa-linkedin-in text-cyan-400 text-base"></i>
+                        </div>
+
+                        <div>
+                            <p class="uppercase text-[10px] tracking-widest text-slate-500">
+                                LinkedIn
+                            </p>
+
+                            <a href="https://www.linkedin.com/in/divesh-t-4a010124a/" target="_blank"
+                                class="text-base font-semibold text-white hover:text-cyan-400 transition">
+                                Divesh LinkedIN
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Github -->
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/30 flex items-center justify-center">
+                            <i class="fab fa-linkedin-in text-cyan-400 text-base"></i>
+                        </div>
+                        <div>
+                            <p class="uppercase tracking-[3px] text-xs text-slate-500">
+                                GitHub
+                            </p>
+
+                            <a href="https://github.com/divesht2024" target="_blank"
+                                class="text-base font-semibold text-white hover:text-cyan-400 transition">
+                                Divesh GitHub
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Side -->
+            <div
+                class="bg-slate-900/60 border border-slate-800 rounded-3xl p-10 shadow-2xl backdrop-blur-md animate-fade-in-up">
+
+                <form class="space-y-7">
+
+                    <div class="group">
+                        <label
+                            class="block text-slate-400 mb-3 text-sm font-medium tracking-wide group-focus-within:text-cyan-400 transition-colors duration-300">
+                            Name
+                        </label>
+                        <input type="text" placeholder="John Doe"
+                            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 outline-none transition-all duration-300 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 hover:border-slate-700">
+                    </div>
+
+                    <div class="group">
+                        <label
+                            class="block text-slate-400 mb-3 text-sm font-medium tracking-wide group-focus-within:text-cyan-400 transition-colors duration-300">
+                            Email Address
+                        </label>
+                        <input type="email" placeholder="john@example.com"
+                            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 outline-none transition-all duration-300 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 hover:border-slate-700">
+                    </div>
+
+                    <div class="group">
+                        <label
+                            class="block text-slate-400 mb-3 text-sm font-medium tracking-wide group-focus-within:text-cyan-400 transition-colors duration-300">
+                            Message
+                        </label>
+                        <textarea rows="6" placeholder="Let's discuss infrastructure automation..."
+                            class="w-full bg-slate-950 border border-slate-800 rounded-xl px-5 py-4 text-white placeholder-slate-600 resize-none outline-none transition-all duration-300 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 hover:border-slate-700"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="group/btn relative w-full py-5 rounded-xl text-lg font-bold text-white overflow-hidden bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-400 bg-[length:200%_auto] animate-gradient-shift hover:scale-[1.015] active:scale-[0.98.5] transition-all duration-300 shadow-xl shadow-cyan-500/15 hover:shadow-cyan-500/30 flex items-center justify-center gap-2">
+
+                        <i
+                            class="fas fa-paper-plane transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1"></i>
+                        <span>Send Message</span>
+                    </button>
+
+                </form>
+            </div>
+
+            <style>
+                /* Custom animation classes */
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(16px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes gradientShift {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+
+                .animate-fade-in-up {
+                    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+
+                .animate-gradient-shift {
+                    animation: gradientShift 4s ease infinite;
+                }
+            </style>
+
+        </div>
+
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-10">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <!-- Logo -->
+            <div class="text-center">
+                <h2 class="font-mono text-2xl font-bold">
+                    <span class="text-white">Divesh</span><span class="text-rose-400 tracking-normal">.devops</span>
+
+                </h2>
+
+                <p class="mt-3 text-slate-400 max-w-xl mx-auto text-sm leading-7">
+    Transforming ideas into reliable cloud solutions through automation, infrastructure as code, and modern DevOps practices.
+</p>
+            </div>
+            <!-- Divider -->
+            
+
+            <!-- Bottom -->
+            <div class="mt-8 pt-6 border-t border-slate-800 flex justify-center items-center">
+    <p class="text-slate-500 text-center">
+        © 2026 <span class="text-white font-semibold">Divesh Tayade</span>.
+        All rights reserved.
+    </p>
+</div>
+
+        </div>
+
+    </footer>
+
+    <!-- Terminal Logic Script -->
+    <script>
+        const terminalInput = document.getElementById('terminal-input');
+        const terminalHistory = document.getElementById('terminal-history');
+        const terminalBody = document.getElementById('terminal-body');
+
+        const commands = {
+            help: "Available commands:<br>- <span class='text-[#3b82f6]'>skills</span>: List architectural toolsets<br>- <span class='text-[#3b82f6]'>terraform</span>: View infrastructure status<br>- <span class='text-[#3b82f6]'>docker</span>: Check container runtime engines<br>- <span class='text-[#3b82f6]'>clear</span>: Clear display lines",
+            skills: "Loading Core Engine Skills Profile...<br>● OS: Linux RHEL Admin<br>● Automation: Terraform, GitHub Actions, Docker",
+            terraform: "provider \"aws\" { region = \"us-east-1\" }<br><span class='text-[#10b981]'>+ aws_vpc.production_stack provisioned successfully.</span>",
+            docker: "Engine: Docker v24.0.7<br>Containers: 3 Running, 0 Paused"
+        };
+
+        terminalInput.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                const rawValue = this.value;
+                const query = rawValue.trim().toLowerCase();
+                if (!query) return;
+
+                let output = `<div><span class='text-[#10b981] font-bold'>guest@sunil-devops:~$</span> <span class='text-slate-100'>${rawValue}</span></div>`;
+
+                if (query === 'clear') {
+                    terminalHistory.innerHTML = '';
+                    this.value = '';
+                    return;
+                } else if (commands[query]) {
+                    output += `<p class='text-slate-300 pl-2 pt-1'>${commands[query]}</p>`;
+                } else {
+                    output += `<p class='text-[#f87171] pl-1 pt-1'>bash: ${rawValue}: command not found. Type <span class='text-[#22d3ee] font-bold'>help</span> to view supported commands.</p>`;
+                }
+
+                terminalHistory.innerHTML += output;
+                this.value = '';
+
+                setTimeout(() => {
+                    terminalBody.scrollTop = terminalBody.scrollHeight;
+                }, 10);
+            }
+        });
+
+        function runMacro(cmd) {
+            terminalInput.value = cmd;
+            const enterEvent = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, key: 'Enter', code: 'Enter' });
+            terminalInput.dispatchEvent(enterEvent);
+        }
+
+
+    </script>
+</body>
+
+</html>
